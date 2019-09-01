@@ -72,7 +72,7 @@ public class BoardController {
       
       return "redirect:/board/list";
    }
-   ////
+   ////노현영이 한 수정
    
    @GetMapping("/register")
    public void register(){
