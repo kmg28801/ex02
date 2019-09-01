@@ -19,20 +19,20 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class BoardController {
    private BoardService service;
-   //URLÀÇ º¯È­¿©ºÎ°¡ ÇÊ¿äÇÏ´Ù¸é Redirect¸¦ »ç¿ëÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù.
-   //°´Ã¼¸¦ Àç»ç¿ëÇÏ°Å³ª °øÀ¯ÇØ¾ßÇÑ´Ù¸é Forward¸¦ »ç¿ëÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù.
+   //URLï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ï¿½Î°ï¿½ ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ Redirectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
+   //ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½Ñ´Ù¸ï¿½ Forwardï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
    @GetMapping("/list")
    public void list(Model model) {
       log.info("list");
       model.addAttribute("list",service.getList());
    }
-   /*
+   
    @PostMapping("/register")
-   //RedirectAttributes´Â ModelÀÇ È®Àå ¹öÀü
+   //RedirectAttributesï¿½ï¿½ Modelï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
    public String register(BoardVO board, RedirectAttributes rttr) {
       log.info("register: "+board);
       service.register(board);
-      //addFlashAttribute´Â redirectÁ÷Àü ÇÃ·¡½Ã¿¡ ÀúÀåÇÏ´Â ¸Þ¼Òµå  -> URL¿¡ ³ëÃâµÇÁö X
+      //addFlashAttributeï¿½ï¿½ redirectï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½  -> URLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ X
       rttr.addFlashAttribute("result", board.getBno());
       
       return "redirect:/board/list";
@@ -44,7 +44,7 @@ public class BoardController {
 //      model.addAttribute("board", service.get(bno));
 //   }
    
-   //Get°ú Post URL¸¦ ¹è¿­·Î Ã³¸® °¡´É
+   //Getï¿½ï¿½ Post URLï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
    @GetMapping({"/get","/modify"})
    public void get(@RequestParam("bno") Long bno, Model model) {
       log.info("/get or midify");
@@ -72,11 +72,11 @@ public class BoardController {
       
       return "redirect:/board/list";
    }
-   ////³ëÇö¿µÀÌ ÇÑ ¼öÁ¤
+   ////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
    
    @GetMapping("/register")
    public void register(){
       
    }
-   */
+   
 }
